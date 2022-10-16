@@ -3,4 +3,19 @@ img.img-height-width{
   max-width: 450px;
   max-height: 300px;
 }
-
+.card-box{
+  max-height: 550px;
+  height: 550px;
+}
+.description{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.title{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
