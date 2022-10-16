@@ -1,0 +1,76 @@
+
+
+.heading-bar{
+    background-color: var(--secondary);
+    color: #f1f1f1;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-bar-contents{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1171px;
+}
+
+.heading-bar-left{
+    display: flex;
+    align-items: center;
+}
+.heading-bar-email{
+    margin-right: 70px;
+}
+
+.heading-bar-right{
+    display: flex;
+    align-items: center;
+}
+
+.heading-bar-cart{
+    cursor: pointer;
+}
+
+.heading-bar-email, .heading-bar-phone, .heading-bar-language, .heading-bar-currency, .heading-bar-account, .heading-bar-wishlist{
+    display: flex;
+}
+
+.heading-bar-language-btn, .heading-bar-currency-btn, .heading-bar-user-btn, .heading-bar-wishlist-btn{
+    border: none;
+    background: none;
+    color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.heading-email-icn,
+.heading-phone-icn,
+.heading-down-icn,
+.heading-down-icn,
+.heading-user-icn,
+.heading-white-icn{
+    width: 16px;
+    height: 16px;
+}
+
+.heading-cart-icn{
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.heading-email-icn,
+.heading-phone-icn{
+    margin-right: 12px;
+}
+
+.heading-down-icn,
+.heading-down-icn,
+.heading-user-icn,
+.heading-white-icn{
+    margin-left: 10px ;
+}

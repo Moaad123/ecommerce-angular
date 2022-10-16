@@ -1,0 +1,30 @@
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let product of couraselProducts let i = index" [ngClass]="{'active' : i==0}">
+      <img (click)="goToProductItem(product.id)" [src]=product.thumbnail class="d-block w-100" style="height: 350px;" alt="...">
+    </div>
+  </div>
+</div>
+<section class="py-5">
+  <div class="container">
+    <h3 class="nav justify-content-center titleColor">Leatest Products</h3>
+    <ul class="nav justify-content-center">
+      <li class="nav-item"><a role="presentation" class="nav-link fw-100 titleColor" (click)="getRandomProduct()"
+          href="#!">New Arrival</a>
+      </li>
+      <li class="nav-item"><a class="nav-link fw-100 titleColor" (click)="getRandomProduct()" href="#!">Best Seller</a>
+      </li>
+      <li class="nav-item"><a class="nav-link fw-100 titleColor" (click)="getRandomProduct()" href="#!">Featured</a>
+      </li>
+      <li class="nav-item"><a class="nav-link fw-100 titleColor" (click)="getRandomProduct()" href="#!">Special
+          Offer</a></li>
+    </ul>
+    <div class="row row-cols-3 g-3 mt-5 justify-content-center">
+      <app-product *ngFor="let product of products" [product]="product"></app-product>
+    </div>
+    <div *ngIf="!products.length" class="d-flex justify-content-center" role="status">
+      <div class="spinner-border" style="height: 5em; width: 5em;" role="status">
+      </div>
+    </div>
+  </div>
+</section>

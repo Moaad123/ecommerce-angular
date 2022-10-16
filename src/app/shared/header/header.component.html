@@ -1,0 +1,43 @@
+<section class="header-top" style="background-color: #7b32db;">
+  <div class="container">
+      <div class="row">
+          <div  class="col-xl-6 col-lg-6 col-md-6 text-white d-flex">
+              <div class="topbar-mail" *ngIf="isConnected">
+                <fa-icon [icon]="email"></fa-icon> : {{connectedUser.email}}
+              </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-6 col-md-6 p-0 header-top-rightbar">
+              <ul class="nav justify-content-end pt-2">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-white pe-0" data-toggle="dropdown" href="#"
+                      role="button" aria-haspopup="true" aria-expanded="true">English</a>
+                      <div class="dropdown-menu">
+                          <a href="#" class="dropdown-item">Spain</a>
+                          <a href="#" class="dropdown-item">Frech</a>
+                      </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-white pe-0" data-toggle="dropdown" href="#"
+                      role="button" aria-haspopup="true" aria-expanded="false">USD</a>
+                      <div class="dropdown-menu">
+                          <a href="#" class="dropdown-item">EURO</a>
+                          <a href="#" class="dropdown-item">VND</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link text-white pe-0"><fa-icon [icon]="wishList"></fa-icon></a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/shopping-cart" class="nav-link text-white pe-0" *ngIf="isConnected"><fa-icon [icon]="cart"> </fa-icon></a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/login" *ngIf="!isConnected" class="nav-link text-white pe-0">Login<fa-icon [icon]="user"></fa-icon></a>
+                    <a routerLink="/login" (click)="logout_function()" *ngIf="isConnected" class="nav-link text-white pe-0">Logout<fa-icon [icon]="logout"></fa-icon></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+  </div>
+</section>

@@ -1,0 +1,81 @@
+.main-container{
+  padding-top: 124px;
+}
+.main-container .title{
+  margin-bottom: 42px;
+}
+.main-container .title h4{
+  font-size: 22px;
+  line-height: 26px;
+  color: #151875;
+  font-weight: 700;
+}
+.ratings{
+  margin-right:10px;
+}
+
+.ratings i{
+  color:#cecece;
+  font-size:25px;
+}
+
+.rating-color{
+  color:#fbc634 !important;
+}
+.main-container .title p{
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #8A8FB9;
+}
+.product-sorting{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #3F509E;
+}
+
+input#per-page{
+    width: 55px;
+    height: 25px;
+    border: 1px solid #E7E6EF;
+    margin-left: 8px;
+    margin-right: 27px;
+}
+
+.product-sorting .nice-select{
+    font-family: 'lato', sans-serif;
+    color: #8A8FB9;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    height: auto;
+    padding: 5px 24px 5px 11px;
+}
+
+.product-sorting .nice-select::after{
+    /* color: #8A8FB9; */
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+    top: 35%;
+    right: 16px;
+    transform: none;
+
+}
+
+.view a{
+    margin-left: 5px;
+}
+
+.view .iconify{
+    color: #151875;
+}
+
+.view input{
+  width: 55px;
+  height: 25px;
+  border: 1px solid #E7E6EF;
+  margin-left: 8px;
+}

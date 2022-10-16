@@ -1,0 +1,35 @@
+.info p{
+  color: #8A8FB9;
+}
+.info h6{
+  color: rgba(35,55,124,255);
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+}
+.info h2{
+  margin-bottom: 2em;
+}
+.question .form-control{
+  width: 100%;
+  margin-top: 30px;
+  border: 1px solid rgba(164, 182, 200, 0.7);
+  border-radius: 5px;
+}
+.question textarea{
+  margin-top: 30px;
+  height: 10em;
+}
+.question .btn-send{
+  color: white;
+  background-color: #FB2E86;
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-bottom: 2em;
+}
+.question{
+  background: #F4F4FC;
+  border-radius: 3px;
+}
+.question form{
+  margin-top: 5em;
+}

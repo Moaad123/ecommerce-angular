@@ -1,0 +1,46 @@
+<div class="col mb-5 card-box" data-bs-toggle="tooltip" title="Click to view product details">
+  <div class="card h-100">
+    <!-- Sale badge-->
+    <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
+    <!-- Product image-->
+    <img class="card-img-top img-height-width" [src]=product.thumbnail alt="..." />
+    <!-- Product details-->
+    <div class="card-body p-4">
+      <div class="text-center">
+        <!-- Product name-->
+        <h5 class="fw-bolder">{{product.title}}</h5>
+        <!-- Product reviews-->
+        <div class="d-flex justify-content-center small text-warning mb-2">
+
+          <div *ngFor="let rating of roundNumberArray(product.rating)" class="bi-star-fill"></div>
+        </div>
+        <!-- Product price-->
+        <div class="col d-flex justify-content-around">
+        <p class="card-text">${{calculateOrginalPrice(product.price,product.discountPercentage)}} - <span
+            style="text-decoration-line: line-through;color:rgba(251,46,134,255)">${{product.price}}</span></p>
+            <bar-rating [(rate)]="product.rating" [readOnly]="true" [max]="5">
+              <ng-template ratingActive>
+                <i class="fa fa-star" style="margin: 2px; color: #edb867"></i>
+              </ng-template>
+              <ng-template ratingInactive>
+                <i class="fa fa-star" style="margin: 2px; color:#D8D8D8"></i>
+              </ng-template>
+            </bar-rating>
+          </div>
+        <p class="card-text">{{product.description}}</p>
+      </div>
+    </div>
+    <!-- Product actions-->
+    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-between">
+      <span href="" title="Add to Cart" (click)="addCart()">
+        <fa-icon [icon]="addToCart"></fa-icon>
+      </span>
+      <span href="" title="WishList">
+        <fa-icon [icon]="addToWishList"></fa-icon>
+      </span>
+      <span title="More detail" (click)="goToProduct()">
+        <fa-icon [icon]="ViewDetail"></fa-icon>
+      </span>
+    </div>
+  </div>
+</div>

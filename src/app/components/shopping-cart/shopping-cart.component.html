@@ -1,0 +1,90 @@
+<app-hero-section></app-hero-section>
+<section class="shopping-cart p-4">
+  <div class="container">
+    <div *ngIf="userCarts.length" class="mt-4 d-flex justify-content-center">
+      <pagination-controls id="list_pagination" [maxSize]="5" [directionLinks]="true"
+        (pageChange)="changePageEventFunction($event)">
+      </pagination-controls>
+    </div>
+    <div class="row"
+      *ngFor="let catrs of userCarts | paginate:{id:'list_pagination',itemsPerPage: 1,currentPage:page,totalItems:totalRecords}">
+      <div class="col-xl-8 col-lg-8 col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="header-table">Product</th>
+              <th scope="col" class="header-table">Price</th>
+              <th scope="col" class="header-table">Quantity</th>
+              <th scope="col" class="header-table">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of userCarts[page-1]?.products">
+              <td class="item">
+                <div class="d-flex">
+                  <div class="item__info d-flex flex-column">
+                    <p class="item__name">{{product?.title}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="price">${{product?.price}}</td>
+              <td class="quantity buttons_added">
+                <input type="number" step="1" min="1" name="quantity" value={{product?.quantity}} title="Qty"
+                  class="input-text qty text" size="" pattern="" inputmode="">
+              </td>
+              <td class="total">${{product?.total}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="button-group d-flex justify-content-between">
+          <button class="btn btn-update">Update Cart</button>
+          <button (click)="clearCart(userCarts[page-1].id)" type="submit" class="btn btn-clear">Clear Cart</button>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4">
+        <h4 class="text-center">Cart Totals</h4>
+        <div class="cart__totals">
+          <div class="d-flex justify-content-between">
+            <p>Subtotals:</p>
+            <p>${{userCarts[page-1]?.discountedTotal}}</p>
+          </div>
+          <hr class="cart__totals__line">
+          <div class="d-flex justify-content-between">
+            <p>Totals:</p>
+            <p>${{userCarts[page-1]?.total}}</p>
+          </div>
+          <hr class="cart__totals__line">
+          <div class="d-flex justify-content-between">
+            <p>Total Product:</p>
+            <p>{{userCarts[page-1]?.totalProducts}}</p>
+          </div>
+          <hr class="cart__totals__line">
+          <div class="d-flex justify-content-between">
+            <p>Total Quantity:</p>
+            <p>{{userCarts[page-1]?.totalQuantity}}</p>
+          </div>
+          <hr class="cart__totals__line">
+          <label class="checkout">
+            Shipping & taxes calculated at checkout
+            <input type="checkbox" name="" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <a (click)="proceedToCheckoutHandle(userCarts[page-1].id)" class="btn btn-checkout">Proceed To Checkout</a>
+        </div>
+        <h4 class="text-center">Calculate Shopping</h4>
+        <div class="calculate__shipping">
+          <div class="d-flex flex-column">
+            <input type="text" name="" id="" placeholder="Bangladesh">
+            <input type="text" name="" id="" placeholder="Mirpur Dhaka - 1200">
+            <input type="text" name="" id="" placeholder="Postal Code">
+            <button class="btn btn-shipping">Calculate Shiping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col justify-content-xl-center ml-5" *ngIf="!userCarts.length">
+      <p>No Cart Available for this User<a routerLink="/"> Back to Home Page</a></p>
+      <img src="/assets/no-data.jpg" alt="" width="50%" height="50%">
+    </div>
+  </div>
+</section>

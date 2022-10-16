@@ -1,0 +1,87 @@
+.textColor{
+  color : rgba(251,46,134,255)
+}
+.backgroundColor{
+  background-color: rgba(251,46,134,255);
+}
+.titleColor{
+  color: rgba(35,55,124,255);
+}
+.dot {
+  margin-left: 3px;
+  margin-right: 3px;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(87,38,223,255);
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot1 {
+  margin-left: 3px;
+  margin-right: 3px;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,39,183,255);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot2 {
+  margin-left: 3px;
+  margin-right: 3px;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(55,218,243,255);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.contact-way span{
+  width: 40px;
+  height: 40px;
+  background-color: #5625DF;
+  border-radius: 20px;
+  margin-top: 1em;
+  margin-right: 0.6em;
+}
+.contact-way span.dot4{
+  background-color: #5625DF;
+}
+.contact-way span.dot5{
+  background-color: #FB2E86;
+}
+.contact-way span.dot6{
+  background-color: #FFB265;
+}
+.contact-way span.dot7{
+  background-color: #1BE982;
+}
+.contact-way p{
+  color: #8A8FB9;
+}
+.info p{
+  color: #8A8FB9;
+}
+
+.inTouch p{
+  color: #8A8FB9;
+}
+form .form-control{
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid rgba(164, 182, 200, 0.7);
+  border-radius: 5px;
+}
+form textarea{
+  margin-top: 20px;
+  height: 10em;
+}
+form .btn-send{
+  color: white;
+  background-color: #FB2E86;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.inTouch {
+  margin-top: 2em;
+}

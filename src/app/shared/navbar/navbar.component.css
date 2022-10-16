@@ -1,0 +1,12 @@
+.textColor{
+  color : rgba(251,46,134,255)
+}
+.backgroundColor{
+  background-color: rgba(251,46,134,255);
+}
+.titleColor{
+  color: rgba(35,55,124,255);
+}
+ul li a:hover{
+  color: rgba(251,46,134,255);
+}

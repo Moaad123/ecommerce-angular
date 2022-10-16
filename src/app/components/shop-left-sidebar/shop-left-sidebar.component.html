@@ -1,0 +1,189 @@
+<app-hero-section sectionTitle="Shop Left Sidebar" sectionSlogan="Shop Left Sidebar"></app-hero-section>
+<section class="main-container">
+  <div class="container p-5">
+    <div class="row">
+      <div class="col-xl-4 col-lg-3 col-md-12 title">
+        <h4>Ecommerce Acceories & Fashion item</h4>
+        <p>About 9.620 results (0.62 seconds)</p>
+      </div>
+      <div class="col-xl-8 col-lg-9 col-md-12 product-sorting">
+        <div class="row">
+          <div class="col-xl-7 col-lg-7 col-md-7">
+            <div class="d-flex justify-content-end">
+              <div class="d-flex">
+                <label for="per-page">Per Page: </label>
+                <input (change)="perPageChange($event)" type="number" id="per-page">
+              </div>
+              <div class="filter__sort d-flex">
+                <p>Sort By: </p>
+                <form action="" method="get">
+                  <select (change)="sortByCahnge($event)" name="select" id="sortBy">
+                    <option selected></option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                    <option value="discount">Discount</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class=" col-xl-5 col-lg-5 col-md-5">
+            <div class="d-flex view justify-content-end">
+              <p>View: </p>
+              <a routerLink="/grid-default">
+                <fa-icon class="iconify" [icon]="GridView"></fa-icon>
+              </a>
+              <a routerLink="/shop-left-sider">
+                <fa-icon class="iconify" [icon]="ListView"></fa-icon>
+              </a>
+              <input type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-3 col-lg-3 col-md-3">
+        <div>
+          <div>
+            <h5 class="titleColor text-decoration-underline">Discount Offer</h5>
+            <ul class="" style="list-style: none;">
+              <li *ngFor="let discount of discounts">
+                <input (change)="onChangeDiscount($event)" class="form-check-input" [value]="discount.value"
+                  type="checkbox" value="20" aria-label="...">
+                {{discount.name}}
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="titleColor text-decoration-underline">Rating Item</h5>
+            <ul class="" style="list-style: none;">
+              <li class="d-flex">
+                <input (change)="onChangeRating($event)" class="form-check-input" [value]=1 type="checkbox" value="20"
+                  aria-label="...">
+                <div class="ratings px-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </li>
+              <li class="d-flex">
+                <input (change)="onChangeRating($event)" [value]=2 class="form-check-input" type="checkbox" value="20"
+                  aria-label="...">
+                <div class="ratings px-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </li>
+              <li class="d-flex">
+                <input (change)="onChangeRating($event)" [value]=3 class="form-check-input" type="checkbox" value="20"
+                  aria-label="...">
+                <div class="ratings px-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </li>
+              <li class="d-flex">
+                <input (change)="onChangeRating($event)" [value]=4 class="form-check-input" type="checkbox" value="20"
+                  aria-label="...">
+                <div class="ratings px-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </li>
+              <li class="d-flex">
+                <input (change)="onChangeRating($event)" [value]=5 class="form-check-input" type="checkbox" value="20"
+                  aria-label="...">
+                <div class="ratings px-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="titleColor text-decoration-underline">Categories</h5>
+            <ul class="" style="list-style: none;">
+              <li *ngFor="let categorie of categories">
+                <input (change)="onChangeCategorie($event)" [value]="categorie.value" class="form-check-input"
+                  type="checkbox" name="prestashop" value="prestashop" aria-label="...">
+                {{categorie.name}}
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="titleColor text-decoration-underline">Price Filter</h5>
+            <ul class="" style="list-style: none;">
+              <li *ngFor="let priceRange of priceRanges">
+                <input (change)="onChangePriceRange($event)" class="form-check-input" [value]="priceRange.value"
+                  type="checkbox" value="20" aria-label="...">
+                {{priceRange.name}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-9 col-lg-9 col-md-9">
+        <div
+          *ngFor="let product of products | paginate:{id:'list_pagination',itemsPerPage: perPage,currentPage:page,totalItems:totalRecords}"
+          class="card mb-3 card-box">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img [src]=product.images[0] class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text">${{calculateOrginalPrice(product.price,product.discountPercentage)}} - <span
+                    style="text-decoration-line: line-through;color:rgba(251,46,134,255)">${{product.price}}</span></p>
+                    <bar-rating [(rate)]="product.rating" [readOnly]="true" [max]="5">
+                      <ng-template ratingActive>
+                        <i class="fa fa-star" style="margin: 2px; color: #edb867"></i>
+                      </ng-template>
+                      <ng-template ratingInactive>
+                        <i class="fa fa-star" style="margin: 2px; color:#D8D8D8"></i>
+                      </ng-template>
+                    </bar-rating>
+                    <p class="card-text">{{product.description}}</p>
+              </div>
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <span class="px-2" href="" title="Add to Cart" (click)="addCart()">
+                  <fa-icon [icon]="addToCart"></fa-icon>
+                </span>
+                <span class="px-2" href="" title="WishList">
+                  <fa-icon [icon]="addToWishList"></fa-icon>
+                </span>
+                <span class="px-2" title="More detail" (click)="goToProductItem(product.id)">
+                  <fa-icon [icon]="ViewDetail"></fa-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <pagination-controls id="list_pagination" [maxSize]="5" [directionLinks]="true"
+            (pageChange)="changePage($event)">
+          </pagination-controls>
+        </div>
+        <div *ngIf="!products.length" class="d-flex justify-content-center" role="status">
+          <div class="spinner-border" style="height: 5em; width: 5em;" role="status">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
