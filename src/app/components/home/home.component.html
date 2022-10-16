@@ -1,4 +1,4 @@
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-toggle="tooltip" title="Click to view product details">
   <div class="carousel-inner">
     <div class="carousel-item" *ngFor="let product of couraselProducts let i = index" [ngClass]="{'active' : i==0}">
       <img (click)="goToProductItem(product.id)" [src]=product.thumbnail class="d-block w-100" style="height: 350px;" alt="...">
