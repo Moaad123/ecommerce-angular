@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Cart } from '../../interface/cart.interface';
-import { User } from '../../interface/user.interface';
+import { Cart } from '../../interfaces/cart.interface';
+import { User } from '../../interfaces/user.interface';
 import { CartService } from '../../services/cart.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {faCartShopping,faUser,faHeart,faPhone,faEnvelope,faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
-import { User } from 'src/app/interface/user.interface';
+import { User } from 'src/app/interfaces/user.interface';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

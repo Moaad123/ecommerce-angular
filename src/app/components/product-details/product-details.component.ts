@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Product } from '../../interface/product.interface';
+import { Product } from '../../interfaces/product.interface';
 import { ProductService } from '../../services/product.service';
 
 @Component({

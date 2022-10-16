@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Product } from '../../interface/product.interface';
+import { Product } from '../../interfaces/product.interface';
 import { ProductService } from '../../services/product.service';
 import {
   faCartPlus,

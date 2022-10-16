@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Product } from '../../interface/product.interface';
+import { Product } from '../../interfaces/product.interface';
 import { ProductService } from '../../services/product.service';
 import {faList,faTable} from '@fortawesome/free-solid-svg-icons';
 

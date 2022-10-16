@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/interface/product.interface';
+import { Product } from 'src/app/interfaces/product.interface';
 import { Router } from '@angular/router';
 import {
   faCartPlus,
