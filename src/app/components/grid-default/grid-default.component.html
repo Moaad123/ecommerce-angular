@@ -12,16 +12,16 @@
             <div class="d-flex justify-content-end">
               <div class="d-flex">
                 <label for="per-page">Per Page: </label>
-                <input type="text" id="per-page">
+                <input (change)="perPageChange($event)" type="text" id="per-page">
               </div>
               <div class="filter__sort d-flex">
                 <p>Sort By: </p>
                 <form action="" method="get">
-                  <select name="select" id="sortBy">
+                  <select name="select" id="sortBy" (change)="sortByCahnge($event)">
                     <option selected></option>
-                    <option value="value">Price</option>
-                    <option value="value">Rating</option>
-                    <option value="value">Discount</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                    <option value="discount">Discount</option>
                   </select>
                 </form>
               </div>

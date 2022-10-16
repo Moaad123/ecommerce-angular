@@ -42,6 +42,27 @@ export class GridDefaultComponent implements OnInit {
       }
     )
   }
+  sortByCahnge(event: any) {
+    if (event.target.value === 'price')
+      this.products.sort(
+        (a, b) => parseFloat(a.price + '') - parseFloat(b.price + '')
+      );
+    if (event.target.value === 'discount')
+      this.products.sort(
+        (a, b) =>
+          parseFloat(a.discountPercentage + '') -
+          parseFloat(b.discountPercentage + '')
+      );
+    if (event.target.value === 'rating')
+      this.products.sort(
+        (a, b) => parseFloat(a.rating + '') - parseFloat(b.rating + '')
+      );
+  }
+  perPageChange(event: any) {
+    if (event.target.value) {
+      this.perPage = event.target.value;
+    }
+  }
   ngOnDestroy(): void {
     this.productSubscription?.unsubscribe();
   }
