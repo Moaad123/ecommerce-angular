@@ -5,6 +5,7 @@ import { LoginService } from '../../services/login.service';
 import { TokenStorageService } from '../../services/token-storage.service';
 import { __values } from 'tslib';
 import {FormGroup,FormControl} from '@angular/forms'
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-my-account',
@@ -19,7 +20,8 @@ export class MyAccountComponent implements OnInit {
   constructor(
     private loginService : LoginService,
     private tokenService : TokenStorageService,
-    private route : Router
+    private route : Router,
+    private dataSharingService : DataSharingService
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +37,6 @@ export class MyAccountComponent implements OnInit {
     }
     this.loginSubscription = this.loginService.login(loginValues.username,loginValues.password).subscribe(
       (value : any) =>{
-        console.log(value)
         this.tokenService.saveToken(value.token) ;
         const userConnected =  {
           id: value.id,
@@ -47,6 +48,7 @@ export class MyAccountComponent implements OnInit {
         }
         this.tokenService.saveUser(userConnected)
         this.isLoginSuccessful = true;
+        this.dataSharingService.isConnceted.next(true)
         this.route.navigateByUrl('');
       },
       (error : any) =>{

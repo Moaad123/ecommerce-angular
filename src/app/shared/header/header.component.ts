@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {faCartShopping,faUser,faHeart,faPhone,faEnvelope,faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
 import { User } from 'src/app/interfaces/user.interface';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -26,12 +27,17 @@ export class HeaderComponent implements OnInit {
     phone: ''
   }
 
-  constructor() { }
+  constructor(private dataSharingService : DataSharingService) {
+    this.dataSharingService.isConnceted.subscribe(
+      (value)=>{
+        this.isConnected = value
+      }
+    )
+   }
 
   ngOnInit(): void {
     if(window.sessionStorage.getItem('auth-token')){
       this.isConnected = true
-      console.log(JSON.parse(window.sessionStorage.getItem('auth-user')!));
       this.connectedUser = JSON.parse(window.sessionStorage.getItem('auth-user')!)
     }
   }
